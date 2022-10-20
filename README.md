@@ -44,6 +44,7 @@ DPLL和CDCL为可满足性算法，不能直接产生解集和解的数量
     DPLL本身只用于可满足性判断
     但通过在赋值过程中记录赋值，并在结果为 True 的回溯结束时存储
     就可以收集该单一解所要求的赋值
+    
     [N] 其中一些赋值引向 False，必须在一轮结束时舍弃，具体细节在代码部分讨论
 
 - 单一解生成器
@@ -85,4 +86,5 @@ $Q_4$, $Q_5$：每斜线不存在重复皇后
 在 “左上-右下斜线”中与 $P(i,j)$ 相比较的元素位于 $P(i+k,j+k)$ 上，其中要求 $i+k\leq N, j+k\leq N$
 
 $$\bigwedge_{i=2}^{n}\bigwedge_{j=1}^{n-1}\bigwedge_{k=1}^{min(i-1,N-j)} \neg P(i,j)\vee\neg P(i-k,j+k) =: Q_4$$
+
 $$\bigwedge_{i=1}^{n-1}\bigwedge_{j=2}^{n}\bigwedge_{k=1}^{min(N-i,N-j)} \neg P(i,j)\vee\neg P(i+k,j+k) =: Q_5$$
